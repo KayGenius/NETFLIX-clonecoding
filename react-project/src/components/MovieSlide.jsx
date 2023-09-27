@@ -25,6 +25,7 @@ const MovieSlide = ({movies,type}) => {
   };
 
   return (
+   
     <div>
       <Carousel responsive={responsive}>
         {movies.results.map((item,index)=>
