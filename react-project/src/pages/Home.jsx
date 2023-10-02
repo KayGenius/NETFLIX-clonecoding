@@ -5,11 +5,12 @@ import {getPopularMovies,getTopRatedMovies,getUpComingMovies} from '../redux/mov
 import Banner from '../components/Banner'
 import FadeLoader from "react-spinners/FadeLoader";
 import MovieSlide from '../components/MovieSlide';
+import Modal from "../components/Modal";
 
 const Home = () => {
   /**화면이 랜더링 되지마자, api를 가져올 것 */
   const dispatch = useDispatch()
-  const {popularMovies,topRatedMovies,upComingMovies }= useSelector((state)=>state.movies)
+  const {popularMovies,topRatedMovies,upComingMovies,modal }= useSelector((state)=>state.movies)
   const [loading, setLoading] =useState(true);
 
   useEffect(() => {
@@ -37,12 +38,13 @@ if(loading){
       {/* {popularMovies.results &&  */}
       <Banner popularMovies={popularMovies}></Banner>
     {/* } */}
-      <p>popular movies</p>
+      <p style={{fontSize:'30px',marginLeft:'15px'}}>popular movies</p>
       <MovieSlide movies={popularMovies} type='popularMovies'/>
-      <p>TopRated movies</p>
+      <p  style={{fontSize:'30px',marginLeft:'15px'}}>TopRated movies</p>
       <MovieSlide movies={topRatedMovies} type='topRatedMovies'/>
-      <p>upcoming movies</p>
+      <p  style={{fontSize:'30px',marginLeft:'15px'}}>upcoming movies</p>
       <MovieSlide movies={upComingMovies} type='upComingMovies'/>
+      {modal ==0 ?null:<Modal></Modal>}
     </div>
   );
 };
