@@ -27,10 +27,12 @@ const MovieSlide = ({movies,type}) => {
   return (
    
     <div>
-      <Carousel responsive={responsive}>
+      <Carousel className='carousel'responsive={responsive} style={{width:'500px'}}
+      
+      >
         {movies.results.map((item,index)=>
           (
-            <MovieCard movie={item} type={type} key={item.key}></MovieCard>
+            <MovieCard movie={item} type={type} key={item.key} ></MovieCard>
 
           )
         )}

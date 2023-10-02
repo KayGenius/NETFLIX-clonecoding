@@ -51,9 +51,27 @@
     z-index:1;
 }
 
+.carousel{
+    display:flex;
+  
+
+}
+
+.react-multi-carousel-item{
+    width:360px !important;
+    height:250px;
+}
+
+
+
+
 .card-item{
+    margin:0px;
     width:300px;
     height:200px;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px 5px rgba(0,0,0,0.5);
 }
 
 .overlay{
