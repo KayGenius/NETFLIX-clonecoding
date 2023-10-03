@@ -19,8 +19,8 @@ return (
         </div>
         <div className='modal-movie-right'>
             <button className='modal-movie-btn' onClick={() => dispatch(getModal(0))}>X</button>
-            <h1 className='modal-movie-title'>{currentMovies.original_title}</h1>
-            <h3 className='modal-movie-date'>{currentMovies.release_date}</h3>
+            <h2 className='modal-movie-title'>{currentMovies.original_title}</h2>
+            <h5 className='modal-movie-date'>{currentMovies.release_date}</h5>
             <p className='modal-movie-overview'>{overview(currentMovies.overview)}. . .</p>
            
             <div className='video'>
