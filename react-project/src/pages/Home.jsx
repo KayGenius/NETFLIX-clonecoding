@@ -44,7 +44,13 @@ if(loading){
       <MovieSlide movies={topRatedMovies} type='topRatedMovies'/>
       <p  style={{fontSize:'30px',marginLeft:'15px'}}>upcoming movies</p>
       <MovieSlide movies={upComingMovies} type='upComingMovies'/>
-      {modal ==0 ?null:<Modal></Modal>}
+      {modal ==0 ?
+      null
+      :
+      <>
+      <Modal></Modal> 
+      <div className="backdrop"></div>
+      </>}
     </div>
   );
 };
