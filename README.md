@@ -10,9 +10,7 @@ NETFLEX clonecoing을 통해 API활용 숙달
 
 ### ⚙ 개발 환경
 
-- **Front-end** : React / CSS /HTML
-- **Back-end** : Node.js/TMDB API
-- **Framework** : Express
+- **Front-end** : React / CSS /HTML/TMDB API
 
 
 ## 📌 주요 기능
