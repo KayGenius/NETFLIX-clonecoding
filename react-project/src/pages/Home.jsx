@@ -8,15 +8,17 @@ import MovieSlide from '../components/MovieSlide';
 import Modal from "../components/Modal";
 
 const Home = () => {
+  //기존에 있던 session Movie를 지워버릴거임!
+  sessionStorage.removeItem('movie')
   /**화면이 랜더링 되지마자, api를 가져올 것 */
   const dispatch = useDispatch()
   const {popularMovies,topRatedMovies,upComingMovies,modal }= useSelector((state)=>state.movies)
   const [loading, setLoading] =useState(true);
 
   useEffect(() => {
-    const popularApi = axios.get("/popular?language=en-US&page=1");
-    const topratedApi = axios.get("/top_rated?language=en-US&page=1");
-    const upComingApi = axios.get("/upcoming?language=en-US&page=1");
+    const popularApi = axios.get("/popular?language=ko-KR&page=1");
+    const topratedApi = axios.get("/top_rated?language=ko-KR&page=1");
+    const upComingApi = axios.get("/upcoming?language=ko-KR&page=1");
     Promise.all([popularApi, topratedApi, upComingApi])
     .then((res) => {
       dispatch(getPopularMovies(res[0].data))

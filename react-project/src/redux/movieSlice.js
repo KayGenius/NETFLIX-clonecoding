@@ -8,7 +8,9 @@ let movieSlice = createSlice({
     topRatedMovies: [],
     upComingMovies: [],
     modal:0,
-    currentMovies:[]
+    currentMovies:[],
+    movie:null,
+    reviewMovie:[]
   }, //state의 value
   reducers: {
     getPopularMovies: (state, action) => {
@@ -25,9 +27,15 @@ let movieSlice = createSlice({
     },
     getCurrentMovies:(state,action)=>{
       state.currentMovies = action.payload
+    },
+    getMovie:(state,action)=>{
+      state.movie = action.payload
+    },
+    getReviewMovie:(state,action)=>{
+      state.reviewMovie = action.payload
     }
   },
 });
 
-export const {getPopularMovies,getTopRatedMovies,getUpComingMovies, getModal,getCurrentMovies} = movieSlice.actions;
+export const {getMovie,getPopularMovies,getTopRatedMovies,getUpComingMovies,getReviewMovie,getModal,getCurrentMovies} = movieSlice.actions;
 export default movieSlice.reducer;
